@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.apache.log4j.Logger;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +28,7 @@ public class GreetingController {
 				+ " " + String.format(templateAge, ageParam), simpleDateFormat.format(new Date()));
 	}
 	
-	@RequestMapping("/german")
+	@GetMapping("/german")
 	public Greeting getGreeting2(@RequestParam(value = "name") String name) {
 		LOGGER.error("some message");
 		LOGGER.warn("INSIDE getGreeting2");
